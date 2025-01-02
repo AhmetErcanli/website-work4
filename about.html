@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmet Ercanlı - About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Learn about Ahmet Ercanlı's professional journey, experience, and skills.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1a2b48;
+            color: white;
+            padding: 10px 0;
+            padding-left: 15px;
+        }
+
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            background: url('pictures/background.jpg') repeat center center;
+            background-size: cover;
+        }
+
+        .content {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .image-section {
+            max-width: 28%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-section p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .about-section {
+            background-color: #1a2b48;
+            color: #fff;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .skills h3 {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skills ul {
+            margin-top: 0.5rem;
+            list-style: disc;
+            margin-left: 30px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: #ff6347;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content,
+            .image-section {
+                flex: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-section {
+                text-align: center;
+            }
+
+            .image-section img {
+                display: none;
+                /* Hide the image */
+            }
+
+            .image-section p {
+                display: none;
+                /* Hide the text */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ahmet Ercanlı's Blog</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="blog.html">Blog Posts</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="main-content">
+        <div class="content" id="about">
+            <h2>About Me</h2>
+            <p>Hello! My name is Ahmet Ercanlı. I am passionate about Computer Science and Technology. I love to share
+                my
+                knowledge and experiences through my blog.</p>
+            <div class="about-section">
+                <h2>My Professional Journey</h2>
+                <!-- ... extended details about background, experience, and skills ... -->
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <p>Artificial Intelligence</p>
+                    <p>Software Engineering</p>
+                    <p>Machine Learning</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="/pictures/profilephoto.jpg" alt="Ahmet Ercanlı">
+            <p>Ahmet Ercanlı, Software Developer</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Ahmet Ercanlı. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/AhmetErcanli" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/AhmetErcanli" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmetercanli/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

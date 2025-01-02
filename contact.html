@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmet Ercanlı - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Contact Ahmet Ercanlı to inquire about collaborations or tech advice.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('pictures/background4.jpg') no-repeat center center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1a2b48;
+            color: white;
+            padding: 10px 0;
+            padding-left: 15px;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            margin-bottom: 100px;
+            align-items: center;
+
+        }
+
+        .img-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            /* Ensure equal distance from top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-section img {
+            max-width: 74%;
+            height: auto;
+
+        }
+
+        .contact-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 10%;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+            text-align: right;
+            align-self: flex-end;
+            padding-right: 5%;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            width: 100%;
+            text-align: right;
+        }
+
+        .contact-section form input,
+        .contact-section form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+
+        .contact-section form button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            background-color: #1a2b48;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            align-self: flex-end;
+        }
+
+        .contact-section form button:hover {
+            background-color: #ff6347;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: #ff6347;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .feedback {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .img-section,
+            .contact-section {
+                flex: none;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .contact-section h2 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ahmet Ercanlı's Blog</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="blog.html">Blog Posts</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="main-content">
+        <div class="img-section">
+            <img src="/pictures/companylogo.png" alt="Large Image">
+        </div>
+        <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <?php if (isset($_GET['feedback'])): ?>
+            <p class="feedback">
+                <?php echo htmlspecialchars($_GET['feedback']); ?>
+            </p>
+            <?php endif; ?>
+            <form id="contactForm" action="send_message.php" method="POST">
+                <input type="text" name="name" placeholder="Name" data-required="true">
+                <input type="email" name="email" placeholder="Email" data-required="true">
+                <input type="text" name="subject" placeholder="Subject" data-required="true">
+                <textarea name="message" placeholder="Your Message" data-required="true"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Ahmet Ercanlı. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/AhmetErcanli" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/AhmetErcanli" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmetercanli/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    <script>
+
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (event) => {
+
+            const errorMessages = contactForm.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.remove());
+            const erroredFields = contactForm.querySelectorAll('.error');
+            erroredFields.forEach(field => field.classList.remove('error'));
+
+
+            let formValid = true;
+            const requiredFields = contactForm.querySelectorAll('[data-required="true"]');
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    formValid = false;
+                    field.classList.add('error');
+                    const errorMsg = document.createElement('div');
+                    errorMsg.classList.add('error-message');
+                    errorMsg.textContent = 'This field is required.';
+                    field.insertAdjacentElement('afterend', errorMsg);
+                }
+            });
+
+            if (!formValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
